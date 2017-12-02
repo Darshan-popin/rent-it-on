@@ -31,7 +31,7 @@
     <div class="card">
         <h3>Enter the Object Json Schema Below</h3>
         <textarea rows="30  " cols="100" [formControl]="schemaControl" (change)="checkJsonValue()"></textarea>
-        <button class="btn btn-round btn-primary" [disabled]="!validJson">Save Schema</button>
+        <button class="btn btn-round btn-primary" (click)="saveSchema()" [disabled]="!validJson">Save Schema</button>
         <div *ngIf="exception">
             {{exception | json}}
         </div>

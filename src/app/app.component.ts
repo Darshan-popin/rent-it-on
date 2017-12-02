@@ -40,12 +40,12 @@ export class AppComponent {
           }
       }
       getSchemas() {
-          let schemaResp = this.http.get('./assets/test/schemas.json');
+          let schemaResp = this.http.get('http://localhost:3000/object_types');
           schemaResp.subscribe((data) => {
             if (data) {
               this.schema = data;
               console.log(data);
-              // this.getRelatedData();
+              this.getRelatedData();
           }
         });
       }
@@ -53,7 +53,8 @@ export class AppComponent {
       getRelatedData(){
         if(this.schema){
           this.schema.forEach(element => {
-            let resp = this.http.post('getValues', element['name']);
+            let resp = this.http.post('http://localhost:3000/object_data_values/' +  element['id']  +
+            '/get_object_datum_values', element['name']);
             resp.subscribe(data => {
               if(data){
                 this.values[element['name']] = data;
@@ -75,6 +76,13 @@ export class AppComponent {
             this.values[this.objType] = [];
           }
           this.values[this.objType].push( eve['value']);
+          let obj = {};
+          obj['name']= this.objType;
+          obj['value']= eve['value'];
+          let rep = this.http.post('http://localhost:3000/object_data_values', obj);
+          rep.subscribe(data => {
+            console.log(data, 'saved');
+          });
         }
         this.specs = null;
         this.objType  =null;
@@ -84,5 +92,14 @@ export class AppComponent {
         this.isAdmin = false;
         this.schemaControl.setValue('');
         this.validJson = false;
+      }
+
+      saveSchema(){
+        if(this.validJson){
+          let rep = this.http.post('http://localhost:3000/object_type', this.schemaControl.value);
+          rep.subscribe(data => {
+            console.log(data, 'saved Schema');
+          })
+        }
       }
 }
