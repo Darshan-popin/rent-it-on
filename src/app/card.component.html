@@ -1,0 +1,17 @@
+<div class="card" style="width: 75%;margin:4rem auto; padding: 62px">
+    
+    
+            <form *ngIf="formGroup" class="card-body" [formGroup]="formGroup" (submit)="saveValue(formGroup.value)">
+                <h3 class="card-title">Enter the values</h3>
+                <dynamic-bootstrap-form [group]="formGroup"
+                                       [layout]="formLayout"
+                                       [model]="formModel"
+                                    ></dynamic-bootstrap-form>
+    
+                                    
+                                    <button type="submit" *ngIf="formGroup && !formGroup.valid" class="btn btn-lg btn-primary btn-round pull-right"> Save </button>
+                                    <button (click)="cancelValue()" class="btn btn-lg btn-default btn-round pull-right"> Cancel </button>
+            </form>
+        <!-- <i class="fa fa-eercast" aria-hidden="true"></i> -->
+        <!-- <pre *ngIf="formGroup">{{formGroup.value | json}}</pre> -->
+    </div>

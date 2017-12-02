@@ -1,0 +1,113 @@
+[
+    {
+      "name": "Person",
+      "icon": "fa fa-user-circle-o",
+      "specification": {
+        "fields": [
+          {
+            "key": "Name",
+            "input_type": "TEXTBOX",
+            "required": true,
+            "options": {}
+          },
+          {
+            "key": "Marital Status",
+            "input_type": "DROPDOWN",
+            "required": true,
+            "options": {
+              "values": [
+                "Single",
+                "Married"
+              ]
+            }
+          },
+          {
+            "key": "photo",
+            "input_type": "UPLOAD",
+            "required": true,
+            "options": {
+              "fileTypes": [
+                "png",
+                "jpeg"
+              ],
+              "max_count": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Person1",
+      "icon": "fa fa-user-circle-o",
+      "specification": {
+        "fields": [
+          {
+            "key": "Name",
+            "input_type": "TEXTBOX",
+            "required": true,
+            "options": {}
+          },
+          {
+            "key": "Marital Status",
+            "input_type": "DROPDOWN",
+            "required": true,
+            "options": {
+              "values": [
+                "Single",
+                "Married"
+              ]
+            }
+          },
+          {
+            "key": "photo",
+            "input_type": "UPLOAD",
+            "required": true,
+            "options": {
+              "fileTypes": [
+                "png",
+                "jpeg"
+              ],
+              "max_count": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Person2",
+      "icon": "fa fa-user-circle-o",
+      "specification": {
+        "fields": [
+          {
+            "key": "Name",
+            "input_type": "TEXTBOX",
+            "required": true,
+            "options": {}
+          },
+          {
+            "key": "Marital Status",
+            "input_type": "DROPDOWN",
+            "required": true,
+            "options": {
+              "values": [
+                "Single",
+                "Married"
+              ]
+            }
+          },
+          {
+            "key": "photo",
+            "input_type": "UPLOAD",
+            "required": true,
+            "options": {
+              "fileTypes": [
+                "png",
+                "jpeg"
+              ],
+              "max_count": 3
+            }
+          }
+        ]
+      }
+    }
+  ]
